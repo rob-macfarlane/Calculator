@@ -3,24 +3,26 @@
     border-color: red;
 } */
 
-/* .body {
+body {
     display: flex;
     flex-direction: column;
     height: 100vh;
-    background-color:rgb(155, 93, 0);
-
-} */
+    margin: 0pt;
+    background-color:rgb(230, 207, 207);
+}
 
 .page-content {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    /* flex-grow: 1; */
     border: solid red;
+    flex: 1;
 }
 
 .header {
-    padding: 5%;
+    display: flex;
+    min-height: 40pt;
+    border: solid blue;
+    /* flex-grow: 1; */
 }
 
 .calculator {
