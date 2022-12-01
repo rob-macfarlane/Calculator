@@ -3,20 +3,19 @@
     border-color: red;
 } */
 
-.body {
+/* .body {
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
     height: 100vh;
-    width: 100vh;
     background-color:rgb(155, 93, 0);
-}
+
+} */
 
 .page-content {
     display: flex;
     flex-direction: column;
     align-items: center;
-    flex-grow: 1;
+    /* flex-grow: 1; */
     border: solid red;
 }
 
@@ -28,10 +27,9 @@
     display: block;
     flex-direction: column;
     align-items: center;
-    max-width: 33%;
+    max-width: 50%;
     border: solid;
     border-color: blue;
-
 }
 
 .screen {
