@@ -18,7 +18,8 @@ body {
     flex: 1;
 }
 
-.header {
+.header,
+.footer {
     display: flex;
     min-height: 40pt;
     border: solid blue;
@@ -26,12 +27,16 @@ body {
 }
 
 .calculator {
-    display: block;
+    display: flex;
     flex-direction: column;
-    align-items: center;
-    max-width: 50%;
+    align-items: stretch;
+    align-self: center;
+    max-width: 400pt;
+    width: 33%;
+    min-width: 200pt;
     border: solid;
     border-color: blue;
+    flex: 1;
 }
 
 .screen {
