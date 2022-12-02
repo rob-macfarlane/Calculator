@@ -64,26 +64,38 @@ console.log(query_list[3])
 for (let i=0; i < query_list.length; i++) {
     query_list[i].addEventListener('click', () => {
         screen.textContent = i;
-        if (firstInteger === null) {
+        if (firstInteger === "" && operator === null) {
             firstInteger = i;
-        } else if (firstInteger !== null && operator === null) {
+        } else if (firstInteger !== "" && operator === null) {
             firstInteger = (firstInteger + i.toString()) - 0;
             screen.textContent = firstInteger;
-        } else {
+        } else if (firstInteger !== null && operator !== null) {
             secondInteger = i;
+        } else {
+            firstInteger = i;
         }
     })
 }
 
 addition.addEventListener('click', () => {
-    screen.textContent = firstInteger + ' +'
+    if (memory !== null && firstInteger == "") {
+        screen.textContent = memory + ' +';
+    } else {
+        screen.textContent = firstInteger + ' +'
+    }
     operator = '+'
 })
 
 equals.addEventListener('click', () => {
-    output = operate(operator, firstInteger, secondInteger);
+    if (firstInteger !== "") {
+        output = operate(operator, firstInteger, secondInteger);
+    } else if (firstInteger === "" && memory !== null) {
+        output = operate(operator, memory, secondInteger);
+    } 
     screen.textContent = output;
-    firstInteger = output;
+    memory = output;
+    operator = null;
+    firstInteger = "";
 })
 
 multiplication.addEventListener('click', () => {
@@ -103,5 +115,6 @@ division.addEventListener('click', () => {
 
 let output = null;
 let operator = null;
-let firstInteger = null;
+let memory = null;
+let firstInteger = "";
 let secondInteger = null; 
