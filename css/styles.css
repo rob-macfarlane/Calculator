@@ -1,20 +1,18 @@
-/* body {
-    border: solid;
-    border-color: red;
-} */
+html {
+    font-size: 24pt;
+}
 
 body {
     display: flex;
     flex-direction: column;
     height: 100vh;
     margin: 0pt;
-    background-color:rgb(230, 207, 207);
+    background-color:rgb(212, 199, 199);
 }
 
 .page-content {
     display: flex;
     flex-direction: column;
-    border: solid red;
     flex: 1;
 }
 
@@ -22,40 +20,50 @@ body {
 .footer {
     display: flex;
     min-height: 40pt;
-    border: solid blue;
-    /* flex-grow: 1; */
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+}
+
+.footer {
+    display: flex;
+    justify-content: right;
 }
 
 .calculator {
     display: flex;
     flex-direction: column;
-    align-items: stretch;
     align-self: center;
     max-width: 400pt;
     width: 33%;
     min-width: 200pt;
-    border: solid;
-    border-color: blue;
     flex: 1;
+    justify-content: center;
 }
 
 
 .screen {
     display: flex;
     border: solid;
+    min-height: 20pt;
+    height: 10%;
     border-color: black;
     background-color: lightgray;
     flex-grow: auto;
+    font-size: 100%;
+    align-items: center;
+    justify-content: right;
+    padding-right: 5pt;
 }
 
 .button-row {
     display: flex;
-    /* border: solid red; */
 }
 
 .button {
     width: 25%;
-    height: 25%;
     padding: 7%;
     border-color: black;
     border: solid;
@@ -63,9 +71,12 @@ body {
     background-color: aliceblue;
     margin: .25%;
     box-shadow: 0 9px #999;
+    font-size: 50%;
 }
 
-.button:hover {background-color: rgb(172, 195, 204);}
+.button:hover {
+    background-color: rgb(172, 195, 204);
+}
 
 .button:active {
     background-color: rgb(172, 195, 204);
