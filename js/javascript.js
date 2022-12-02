@@ -57,32 +57,23 @@ const addition = document.querySelector('.add');
 const subtraction = document.querySelector('.subtract');
 const equals = document.querySelector('.equals');
 
-console.log(zero);
-zero.addEventListener('click', () => {
-    screen.textContent = '0';
-    if (firstInteger === null) {
-        firstInteger = 0;
-    } else if (firstInteger !== null && operator === null) {
-        firstInteger = (firstInteger + '0') - 0;
-        screen.textContent = firstInteger;
-    } else {
-        secondInteger = 0;
-    }
-});
 
+let query_list = [zero, one, two, three, four, five, six, seven, eight, nine]
+console.log(query_list[3])
 
-console.log(seven);
-seven.addEventListener('click', () => {
-    screen.textContent = '7';
-    if (firstInteger === null) {
-        firstInteger = 7;
-    } else if (firstInteger !== null && operator === null) {
-        firstInteger = (firstInteger + '7') - 0;
-        screen.textContent = firstInteger;
-    } else {
-        secondInteger = 7;
-    }
-});
+for (let i=0; i < query_list.length; i++) {
+    query_list[i].addEventListener('click', () => {
+        screen.textContent = i;
+        if (firstInteger === null) {
+            firstInteger = i;
+        } else if (firstInteger !== null && operator === null) {
+            firstInteger = (firstInteger + i.toString()) - 0;
+            screen.textContent = firstInteger;
+        } else {
+            secondInteger = i;
+        }
+    })
+}
 
 addition.addEventListener('click', () => {
     screen.textContent = firstInteger + ' +'
