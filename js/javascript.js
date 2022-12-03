@@ -93,14 +93,14 @@ addition.addEventListener('click', () => {
     } else if (firstInteger !== "" && secondInteger !== null && operator !== null) {
         output = operate(operator, firstInteger, secondInteger);
         variableShift();
-        screen.textContent = memory + ' +'
+        screen.textContent = memory + ' +';
     } else if (memory !== null && operator !== null && secondInteger !== null) {
         output = operate(operator, memory, secondInteger);
         variableShift();
     }else {
-        screen.textContent = firstInteger + ' +'
+        screen.textContent = firstInteger + ' +';
     }
-    operator = '+'
+    operator = '+';
 })
 
 equals.addEventListener('click', () => {
@@ -113,28 +113,51 @@ equals.addEventListener('click', () => {
 })
 
 multiplication.addEventListener('click', () => {
-    if (memory !== null && firstInteger == "") {
-        screen.textContent = memory + ' X';
-    } else {
-        screen.textContent = firstInteger + ' X'
+    if (memory !== null && firstInteger == "" && secondInteger == null) {
+        screen.textContent = memory + ' *';
+    } else if (firstInteger !== "" && secondInteger !== null && operator !== null) {
+        output = operate(operator, firstInteger, secondInteger);
+        variableShift();
+        screen.textContent = memory + ' *';
+    } else if (memory !== null && operator !== null && secondInteger !== null) {
+        output = operate(operator, memory, secondInteger);
+        variableShift();
+    }else {
+        screen.textContent = firstInteger + ' *';
     }
-    operator = '*'
+    operator = '*';
 })
 
 subtraction.addEventListener('click', () => {
-    if (memory !== null && firstInteger == "") {
+    if (memory !== null && firstInteger == "" && secondInteger == null) {
         screen.textContent = memory + ' -';
+    } else if (firstInteger !== "" && secondInteger !== null && operator !== null) {
+        output = operate(operator, firstInteger, secondInteger);
+        variableShift();
+        screen.textContent = memory + ' -';
+    } else if (memory !== null && operator !== null && secondInteger !== null) {
+        output = operate(operator, memory, secondInteger);
+        variableShift();
     } else {
-        screen.textContent = firstInteger + ' -'
-    }    operator = '-'
+        screen.textContent = firstInteger + ' -';
+    } 
+    operator = '-';
 })
 
 division.addEventListener('click', () => {
-    if (memory !== null && firstInteger == "") {
+    if (memory !== null && firstInteger == "" && secondInteger == null) {
         screen.textContent = memory + ' /';
-    } else {
-        screen.textContent = firstInteger + ' /'
-    }    operator = '/'
+    } else if (firstInteger !== "" && secondInteger !== null && operator !== null) {
+        output = operate(operator, firstInteger, secondInteger);
+        variableShift();
+        screen.textContent = memory + ' /';
+    } else if (memory !== null && operator !== null && secondInteger !== null) {
+        output = operate(operator, memory, secondInteger);
+        variableShift();
+    }else {
+        screen.textContent = firstInteger + ' /';
+    }
+    operator = '/';
 })
 
 
