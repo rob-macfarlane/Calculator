@@ -1,5 +1,4 @@
 // TODO:
-// Update the multiplication, division, and subtraction functions
 // update the "." so we can do decimal work
 // update so second integer can be larger than 0-9
 // update so that only 16 digits can be entered return 
@@ -107,18 +106,28 @@ equals.addEventListener('click', () => {
 })
 
 multiplication.addEventListener('click', () => {
-    screen.textContent = firstInteger + ' x'
+    if (memory !== null && firstInteger == "") {
+        screen.textContent = memory + ' X';
+    } else {
+        screen.textContent = firstInteger + ' X'
+    }
     operator = '*'
 })
 
 subtraction.addEventListener('click', () => {
-    screen.textContent = firstInteger + ' -'
-    operator = '-'
+    if (memory !== null && firstInteger == "") {
+        screen.textContent = memory + ' -';
+    } else {
+        screen.textContent = firstInteger + ' -'
+    }    operator = '-'
 })
 
 division.addEventListener('click', () => {
-    screen.textContent = firstInteger + ' /'
-    operator = '/'
+    if (memory !== null && firstInteger == "") {
+        screen.textContent = memory + ' /';
+    } else {
+        screen.textContent = firstInteger + ' /'
+    }    operator = '/'
 })
 
 let output = null;
