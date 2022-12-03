@@ -88,9 +88,16 @@ for (let i=0; i < query_list.length; i++) {
 }
 
 addition.addEventListener('click', () => {
-    if (memory !== null && firstInteger == "") {
+    if (memory !== null && firstInteger == "" && secondInteger == null) {
         screen.textContent = memory + ' +';
-    } else {
+    } else if (firstInteger !== "" && secondInteger !== null && operator !== null) {
+        output = operate(operator, firstInteger, secondInteger);
+        variableShift();
+        screen.textContent = memory + ' +'
+    } else if (memory !== null && operator !== null && secondInteger !== null) {
+        output = operate(operator, memory, secondInteger);
+        variableShift();
+    }else {
         screen.textContent = firstInteger + ' +'
     }
     operator = '+'
@@ -102,11 +109,7 @@ equals.addEventListener('click', () => {
     } else if (firstInteger === "" && memory !== null) {
         output = operate(operator, memory, secondInteger);
     } 
-    screen.textContent = output;
-    memory = output;
-    operator = null;
-    firstInteger = "";
-    secondInteger = null;
+    variableShift();
 })
 
 multiplication.addEventListener('click', () => {
@@ -133,6 +136,16 @@ division.addEventListener('click', () => {
         screen.textContent = firstInteger + ' /'
     }    operator = '/'
 })
+
+
+function variableShift() {
+    screen.textContent = output;
+    memory = output;
+    output = null;
+    operator = null;
+    firstInteger = "";
+    secondInteger = null;
+}
 
 let output = null;
 let operator = null;
