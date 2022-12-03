@@ -76,8 +76,11 @@ for (let i=0; i < query_list.length; i++) {
         } else if (firstInteger !== "" && operator === null) {
             firstInteger = (firstInteger + i.toString()) - 0;
             screen.textContent = firstInteger;
-        } else if (firstInteger !== null && operator !== null) {
+        } else if (firstInteger !== null && operator !== null && secondInteger === null) {
             secondInteger = i;
+        } else if (operator !== null && secondInteger !== null) {
+            secondInteger = (secondInteger + i.toString()) - 0;
+            screen.textContent = secondInteger;
         } else {
             firstInteger = i;
         }
@@ -103,6 +106,7 @@ equals.addEventListener('click', () => {
     memory = output;
     operator = null;
     firstInteger = "";
+    secondInteger = null;
 })
 
 multiplication.addEventListener('click', () => {
