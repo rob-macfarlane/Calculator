@@ -25,6 +25,14 @@ function divide(integer1, integer2) {
 function operate(operator, integer1, integer2) {
     let output = null;
     // console.log(operator)
+    stringInteger1 = integer1.toString();
+    stringInteger2 = integer2.toString();
+
+    if (stringInteger1.slice(-1) === ".") {
+        integer1 = stringInteger1.slice(0, -1) - 0;
+    } else if (stringInteger2.slice(-1) === ".") {
+       integer2 = stringInteger2.slice(0,-1) - 0;
+    }
     switch (operator) {
         case '+':
             output = add(integer1, integer2);
@@ -62,6 +70,7 @@ const division = document.querySelector('.divide');
 const addition = document.querySelector('.add');
 const subtraction = document.querySelector('.subtract');
 const equals = document.querySelector('.equals');
+const decimalPlace = document.querySelector('.period');
 
 
 let query_list = [zero, one, two, three, four, five, six, seven, eight, nine]
@@ -157,6 +166,23 @@ division.addEventListener('click', () => {
         screen.textContent = firstInteger + ' /';
     }
     operator = '/';
+})
+
+decimalPlace.addEventListener('click', () => {
+    screen.textContent = "."
+    if (firstInteger === "" && operator === null) {
+        firstInteger = ".";
+    } else if (firstInteger !== "" && operator === null) {
+        firstInteger = (firstInteger + ".");
+        screen.textContent = firstInteger;
+    } else if (firstInteger !== null && operator !== null && secondInteger === null) {
+        secondInteger = ".";
+    } else if (operator !== null && secondInteger !== null) {
+        secondInteger = (secondInteger + '.');
+        screen.textContent = secondInteger;
+    } else {
+        firstInteger = ".";
+    }
 })
 
 
