@@ -25,11 +25,13 @@ body {
 .header {
     display: flex;
     justify-content: center;
+    padding-top: 20pt;
 }
 
 .footer {
     display: flex;
     justify-content: right;
+    padding-right: 10pt;
 }
 
 .calculator {
