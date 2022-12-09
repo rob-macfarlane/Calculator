@@ -1,6 +1,5 @@
 // TODO:
 // update the "." so we can do decimal work
-// update so second integer can be larger than 0-9
 // update so that only 16 digits can be entered return 
 //      error if there are more than 16 digits 
 
